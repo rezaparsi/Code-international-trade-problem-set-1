@@ -7,11 +7,13 @@
 clear;
 clc;
 
-savepath = fullfile('/Users/rezaparsi/Desktop/International Trade/P1');
+% Main Folder
+
+savepath = fullfile('/Users/rezaparsi/Desktop/International Trade/P1/');
 
 
 
-distnace = table2cell(readtable('distance.csv'));
+distnace = table2cell(readtable(fullfile(savepath,'Raw Data/distance.csv')));
 
 % List of the countries needed for the HW
 
@@ -52,7 +54,7 @@ dni   = distance(index,3);
 dni   = reshape(dni,40,40);
 dni   = cell2mat(dni);
 
-csvwrite(fullfile(savepath,'dni-matrix-version.csv'),dni);
+csvwrite(fullfile(savepath,'Clean Data/dni-matrix-version.csv'),dni);
 
 
 
